@@ -201,4 +201,4 @@ h1 span { color: var(--primary); }
   .hero-copy { max-width: 80%; }.hero-art { left: 57%; opacity: .4; }
   .stats-grid { grid-template-columns: 1fr; }.stat-card { padding: 15px; }
   .filters { grid-template-columns: 1fr; }.top-actions .live-dot { display: none; }
-}
+                   }
