@@ -1242,3 +1242,475 @@ padding: 8px 5px;
 overflow-x: auto;
 overflow-y: hidden;
 border-top: 
+/* ===== SCHOLARFINDER VISUAL FIX ===== */
+
+:root {
+--bg: #f5f6fc;
+--primary: #6255f5;
+--ink: #18213b;
+--muted: #77819a;
+--border: #e6e9f2;
+}
+
+* {
+  box-sizing: border-box;
+  }
+
+body {
+margin: 0;
+background: var(--bg);
+color: var(--ink);
+font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.sidebar {
+position: fixed;
+inset: 0 auto 0 0;
+width: 245px;
+height: 100vh;
+padding: 25px 17px;
+overflow-y: auto;
+background: linear-gradient(180deg, #111a35, #171b46);
+color: white;
+z-index: 20;
+}
+
+.main {
+min-width: 0;
+min-height: 100vh;
+margin-left: 245px;
+background: #f6f7fc;
+}
+
+.topbar {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 16px;
+min-height: 76px;
+padding: 16px 32px;
+background: #fff;
+border-bottom: 1px solid var(--border);
+}
+
+.page-content {
+width: 100%;
+max-width: 1500px;
+margin: auto;
+padding: 30px 32px 45px;
+}
+
+.view {
+display: none;
+}
+
+.view.active {
+display: block;
+}
+
+/* Hero banner */
+
+.hero {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 25px;
+min-height: 210px;
+margin-bottom: 25px;
+padding: 34px;
+overflow: hidden;
+border: 0;
+border-radius: 22px;
+background: linear-gradient(115deg, #272b78 0%, #5146e8 58%, #8d70ff 100%);
+color: white;
+box-shadow: 0 12px 28px rgba(83, 69, 221, .17);
+}
+
+.hero h1,
+.hero h2,
+.hero h3,
+.hero p {
+color: white;
+}
+
+.hero h1 {
+max-width: 600px;
+margin: 0 0 12px;
+font-size: clamp(27px, 3vw, 38px);
+line-height: 1.2;
+}
+
+.hero p {
+max-width: 540px;
+line-height: 1.75;
+opacity: .88;
+}
+
+.hero button,
+.hero .btn {
+margin-top: 14px;
+}
+
+/* Stats — force proper card layout */
+
+.stats-grid {
+display: grid !important;
+grid-template-columns: repeat(4, minmax(0, 1fr));
+gap: 16px;
+margin: 22px 0 32px;
+}
+
+.stats-grid > *,
+.stat-card,
+.stat {
+min-width: 0;
+padding: 21px;
+border: 1px solid var(--border);
+border-radius: 16px;
+background: white;
+box-shadow: 0 5px 20px rgba(28, 38, 76, .045);
+}
+
+.stats-grid h2,
+.stats-grid h3,
+.stat-card h2,
+.stat h2 {
+margin: 5px 0;
+color: var(--ink);
+font-size: 28px;
+font-weight: 800;
+}
+
+.stats-grid p,
+.stat-card p,
+.stat p {
+margin: 0;
+color: var(--muted);
+font-size: 12px;
+}
+
+/* Section headings */
+
+.section-heading,
+.section-header,
+.panel-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 14px;
+margin: 25px 0 17px;
+}
+
+.section-heading h2,
+.section-header h2 {
+margin: 0;
+font-size: 23px;
+}
+
+/* Search and filters */
+
+.search-filter,
+.filters,
+.filter-bar,
+.search-bar {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 12px;
+margin-bottom: 24px;
+padding: 14px;
+border: 1px solid var(--border);
+border-radius: 15px;
+background: white;
+}
+
+input,
+select,
+textarea {
+max-width: 100%;
+min-height: 43px;
+padding: 10px 13px;
+border: 1px solid #dfe3ef;
+border-radius: 10px;
+background: white;
+color: var(--ink);
+font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+border-color: #9389ff;
+outline: 3px solid rgba(98, 85, 245, .1);
+}
+
+/* Scholarship cards */
+
+.scholarship-grid,
+#scholarshipGrid,
+#savedGrid,
+.scholarships-grid {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+align-items: stretch;
+gap: 18px;
+}
+
+.scholarship-card,
+.scholarship-item {
+display: flex;
+flex-direction: column;
+min-width: 0;
+padding: 22px;
+border: 1px solid var(--border);
+border-radius: 17px;
+background: white;
+box-shadow: 0 5px 20px rgba(28, 38, 76, .045);
+transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.scholarship-card:hover,
+.scholarship-item:hover {
+transform: translateY(-3px);
+box-shadow: 0 12px 28px rgba(28, 38, 76, .09);
+}
+
+.scholarship-card h3,
+.scholarship-item h3 {
+margin: 12px 0 8px;
+line-height: 1.45;
+}
+
+.card-footer,
+.scholarship-actions {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 10px;
+margin-top: auto;
+padding-top: 17px;
+}
+
+/* Buttons */
+
+button,
+.btn {
+cursor: pointer;
+transition: .2s ease;
+}
+
+button.primary,
+.primary-btn,
+.btn-primary {
+border: 0;
+border-radius: 10px;
+background: var(--primary);
+color: white;
+}
+
+button.primary:hover,
+.primary-btn:hover,
+.btn-primary:hover {
+background: #4f42df;
+transform: translateY(-1px);
+}
+
+/* Forms and document panels */
+
+.panel {
+margin-bottom: 22px;
+padding: 25px;
+border: 1px solid var(--border);
+border-radius: 18px;
+background: white;
+box-shadow: 0 5px 20px rgba(28, 38, 76, .04);
+}
+
+.form-grid,
+.eligibility-form,
+#eligibilityForm {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 18px;
+}
+
+.form-group,
+.form-field {
+min-width: 0;
+}
+
+.form-group input,
+.form-group select,
+.form-field input,
+.form-field select,
+#eligibilityForm input,
+#eligibilityForm select {
+width: 100%;
+}
+
+.document-list,
+#documentList {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.document-item,
+.document-row,
+.checklist-item {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 14px;
+border: 1px solid var(--border);
+border-radius: 12px;
+background: #fff;
+}
+
+.empty-state,
+.no-results,
+.empty-message {
+grid-column: 1 / -1;
+padding: 35px 20px;
+border: 1px dashed #d9dcef;
+border-radius: 15px;
+background: white;
+text-align: center;
+}
+
+/* Modal */
+
+.modal-backdrop {
+z-index: 100;
+}
+
+.modal,
+.modal-content,
+.modal-card {
+max-width: 650px;
+border-radius: 20px;
+}
+
+/* Responsive */
+
+@media (max-width: 1050px) {
+.stats-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sidebar {
+width: 205px;
+}
+
+.main {
+margin-left: 205px;
+}
+
+.page-content {
+padding: 24px 20px;
+}
+}
+
+@media (max-width: 700px) {
+.sidebar {
+position: fixed;
+inset: auto 0 0;
+display: flex;
+flex-direction: row;
+align-items: center;
+width: 100%;
+height: auto;
+min-height: 65px;
+padding: 7px;
+overflow-x: auto;
+}
+
+.sidebar nav,
+.nav-links {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+gap: 4px;
+width: 100%;
+}
+
+.nav-link {
+flex: 1;
+justify-content: center;
+min-width: 50px;
+padding: 8px 4px;
+font-size: 10px;
+}
+
+.sidebar-label,
+.sidebar-footer,
+.sidebar-tip {
+display: none;
+}
+
+.main {
+margin-left: 0;
+padding-bottom: 75px;
+}
+
+.topbar {
+padding: 13px 16px;
+}
+
+.page-content {
+padding: 18px 13px 28px;
+}
+
+.hero {
+min-height: auto;
+padding: 25px 20px;
+}
+
+.hero h1 {
+font-size: 27px;
+}
+
+.stats-grid {
+gap: 10px;
+}
+
+.stats-grid > *,
+.stat-card,
+.stat {
+padding: 14px;
+}
+
+.stats-grid h2,
+.stats-grid h3,
+.stat-card h2,
+.stat h2 {
+font-size: 23px;
+}
+
+.scholarship-grid,
+#scholarshipGrid,
+#savedGrid,
+.scholarships-grid,
+.form-grid,
+.eligibility-form,
+#eligibilityForm {
+grid-template-columns: minmax(0, 1fr);
+}
+
+.form-full {
+grid-column: auto;
+}
+}
+
+@media (max-width: 380px) {
+.hero h1 {
+font-size: 23px;
+}
+
+.page-content {
+padding-right: 10px;
+padding-left: 10px;
+}
+}
