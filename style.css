@@ -201,4 +201,423 @@ h1 span { color: var(--primary); }
   .hero-copy { max-width: 80%; }.hero-art { left: 57%; opacity: .4; }
   .stats-grid { grid-template-columns: 1fr; }.stat-card { padding: 15px; }
   .filters { grid-template-columns: 1fr; }.top-actions .live-dot { display: none; }
-                   }
+                   } 
+/* ===== SCHOLARFINDER FINAL COLOR THEME ===== */
+
+:root {
+--bg: #e9e9f8;
+--surface: #dfe0f3;
+--ink: #17183f;
+--muted: #626b91;
+--line: #cdd0eb;
+--primary: #6246f5;
+--navy: #101437;
+--green: #12996e;
+}
+
+/* Main page background */
+body {
+background: #e9e9f8;
+color: #17183f;
+}
+
+/* Sidebar */
+.sidebar {
+background: linear-gradient(180deg, #0c1232 0%, #171647 65%, #101332 100%);
+color: #fff;
+border-right: 1px solid #28265f;
+}
+
+.brand-icon {
+background: linear-gradient(135deg, #a08aff, #623bfa);
+box-shadow: 0 4px 14px #6748ff50;
+}
+
+.brand-light {
+color: #a997ff;
+}
+
+.nav-link {
+color: #d0d2eb;
+}
+
+.nav-link:hover {
+background: #ffffff12;
+color: #fff;
+}
+
+.nav-link.active {
+background: linear-gradient(110deg, #5e37ed, #3826a8);
+color: #fff;
+box-shadow: 0 5px 18px #3826a833;
+}
+
+.nav-link b {
+background: #413a86;
+color: white;
+}
+
+.help-card {
+background: linear-gradient(145deg, #24235a, #191941);
+border-color: #393878;
+}
+
+.help-card h3 {
+color: #fff;
+}
+
+.help-card p,
+.sidebar-footer {
+color: #b9bfdf;
+}
+
+.text-button {
+color: #c8bcff;
+}
+
+/* Top header */
+.topbar {
+background: #f8f8ff;
+border-bottom: 1px solid #d8daef;
+}
+
+.breadcrumb {
+color: #626b91;
+}
+
+/* Main content */
+.main {
+background: #e9e9f8;
+}
+
+.page-content {
+background: transparent;
+}
+
+.eyebrow {
+color: #6550e8;
+}
+
+h1, h2, h3 {
+color: #17183f;
+}
+
+.subtitle,
+.result-count {
+color: #626b91;
+}
+
+/* Hero banner */
+.hero {
+background:
+radial-gradient(circle at 85% 20%, #9c8bff 0, transparent 36%),
+linear-gradient(115deg, #211b5b, #5140c7 62%, #775cf4);
+color: white;
+box-shadow: 0 12px 28px #4435a82b;
+}
+
+.hero h2 {
+color: #fff;
+}
+
+.hero-copy p {
+color: #e5e1ff;
+}
+
+.hero-tag {
+color: #c9c0ff;
+}
+
+.hero-circle {
+background: linear-gradient(140deg, #a493ff, #6241ec);
+border-color: #b7aaff;
+}
+
+.floating-card {
+background: #f9f8ff;
+color: #27205e;
+}
+
+/* Search box */
+.search-box {
+background: #f8f8ff;
+border-color: #d1d3ed;
+}
+
+.search-box input {
+color: #17183f;
+}
+
+.search-box input::placeholder {
+color: #858bad;
+}
+
+.search-box:focus-within {
+border-color: #7966f4;
+box-shadow: 0 0 0 3px #7966f41c;
+}
+
+/* Filters */
+.filters select,
+.form-grid select,
+.form-grid input {
+background: #f8f8ff;
+border-color: #cdd0eb;
+color: #24264f;
+}
+
+.filters select:focus,
+.form-grid select:focus,
+.form-grid input:focus {
+border-color: #7966f4;
+outline: none;
+box-shadow: 0 0 0 3px #7966f41c;
+}
+
+.reset-btn {
+color: #5a43e8;
+}
+
+/* Demo notice */
+.notice {
+background: #d9d5ff;
+border-color: #c2baff;
+color: #4535a9;
+}
+
+/* Scholarship boxes — darker lavender */
+.scholarship-card {
+background: linear-gradient(145deg, #e0e1f5, #d9dbf0);
+border: 1px solid #c9cdeb;
+border-radius: 16px;
+box-shadow: 0 5px 16px #29265e0a;
+color: #17183f;
+transition: transform .2s ease, box-shadow .2s ease,
+background .2s ease;
+}
+
+.scholarship-card:hover {
+background: linear-gradient(145deg, #e8e8fa, #d8d9f2);
+border-color: #aaa1f0;
+transform: translateY(-3px);
+box-shadow: 0 12px 25px #29265e18;
+}
+
+.card-heading h3 {
+color: #17183f;
+}
+
+.card-heading p {
+color: #697197;
+}
+
+.scheme-icon {
+background: #f0efff;
+color: #5942db;
+}
+
+.save-btn {
+background: #efedff;
+color: #5540d9;
+}
+
+.save-btn:hover {
+background: #d8d1ff;
+}
+
+.save-btn.is-saved {
+background: #ffe3ed;
+color: #cf3478;
+}
+
+/* Tags */
+.tag {
+background: #ececfa;
+color: #505a80;
+}
+
+.tag-category {
+background: #c9f0df;
+color: #126d51;
+}
+
+/* Description and funding */
+.card-description {
+color: #4e587c;
+}
+
+.card-footer {
+border-top-color: #c9cce7;
+}
+
+.award-label {
+color: #657096;
+}
+
+.award-value {
+color: #17183f;
+}
+
+/* Purple buttons */
+.btn-primary {
+background: linear-gradient(135deg, #795bff, #5736e7);
+color: #fff;
+box-shadow: 0 4px 12px #5a3ce52b;
+}
+
+.btn-primary:hover {
+background: linear-gradient(135deg, #6948f2, #4726cf);
+}
+
+.btn-light {
+background: #fff;
+color: #4e36c9;
+}
+
+.btn-outline {
+background: #f8f8ff;
+border-color: #cdd0eb;
+color: #28284f;
+}
+
+.details-btn {
+background: #d2ccff;
+color: #4832c6;
+}
+
+.details-btn:hover {
+background: #c1b7ff;
+}
+
+/* Stats cards */
+.stat-card {
+background: #f7f7ff;
+border-color: #d2d4ed;
+box-shadow: 0 4px 15px #29265e08;
+}
+
+.stat-top {
+color: #606a90;
+}
+
+.stat-value {
+color: #17183f;
+}
+
+.stat-card p {
+color: #737c9d;
+}
+
+.purple {
+background: #e0dbff;
+color: #6246e8;
+}
+
+.pink {
+background: #ffe2ee;
+color: #cc4c83;
+}
+
+.green {
+background: #d4f5e7;
+color: #13845f;
+}
+
+/* Empty state */
+.empty-state {
+background: #dedff3;
+border-color: #bfc3e4;
+}
+
+.empty-state h3 {
+color: #17183f;
+}
+
+.empty-state p {
+color: #626b91;
+}
+
+/* Forms, checklist and result panels */
+.panel,
+.results-panel {
+background: #f7f7ff;
+border-color: #d0d3ed;
+}
+
+.results-panel h3,
+.checklist-top h3 {
+color: #17183f;
+}
+
+.results-panel p,
+.results-panel li,
+.checklist-top p {
+color: #626b91;
+}
+
+.document-item {
+border-bottom-color: #dfe1f2;
+color: #27294f;
+}
+
+.document-item:hover {
+background: #ecebff;
+}
+
+.document-item input {
+accent-color: #6246f5;
+}
+
+.progress-track {
+background: #dcdcf2;
+}
+
+#progressBar {
+background: linear-gradient(90deg, #6246f5, #a28aff);
+}
+
+/* Modal */
+.modal {
+background: #f8f8ff;
+color: #17183f;
+box-shadow: 0 24px 70px #11133755;
+}
+
+.modal h2 {
+color: #17183f;
+}
+
+.modal p,
+.modal li {
+color: #626b91;
+}
+
+.modal-close {
+background: #e5e2ff;
+color: #4934c5;
+}
+
+/* Keyboard focus */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+outline: 3px solid #a69aff;
+outline-offset: 2px;
+}
+
+/* Responsive preservation */
+@media (max-width: 700px) {
+.sidebar {
+background: linear-gradient(180deg, #0c1232, #20194f);
+}
+
+.hero {
+background:
+radial-gradient(circle at 85% 20%, #9c8bff 0, transparent 36%),
+linear-gradient(115deg, #211b5b, #5140c7 62%, #775cf4);
+}
+
+.scholarship-card {
+background: linear-gradient(145deg, #e0e1f5, #d9dbf0);
+}
+}
