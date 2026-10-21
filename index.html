@@ -1,1 +1,130 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>ScholarFinder | Student Scholarship Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#"><span class="brand-icon">S</span> Scholar<span class="brand-light">Finder</span></a>
+    <p class="nav-label">WORKSPACE</p>
+    <nav class="nav">
+      <button class="nav-link active" data-view="discover">⌕ &nbsp; Discover</button>
+      <button class="nav-link" data-view="saved">♡ &nbsp; Saved <b id="savedCount">0</b></button>
+      <button class="nav-link" data-view="eligibility">✓ &nbsp; Eligibility Checker</button>
+      <button class="nav-link" data-view="documents">▤ &nbsp; Documents</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="help-card">
+        <span>✦</span><h3>Your future matters.</h3>
+        <p>Discover opportunities that can support your education.</p>
+        <button id="helpBtn" class="text-button">Explore scholarships ↗</button>
+      </div>
+      <p class="sidebar-footer">ScholarFinder v1.0<br><small>Independent student project</small></p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="menuBtn">☰</button>
+      <div class="breadcrumb">Workspace / <b id="breadcrumb">Discover</b></div>
+      <div class="top-actions"><span class="live-dot"></span> Student portal
+        <button class="avatar" id="profileBtn">S</button>
+      </div>
+    </header>
+
+    <div class="page-content">
+      <div class="welcome-row">
+        <div>
+          <p class="eyebrow">✦ YOUR OPPORTUNITY STARTS HERE</p>
+          <h1 id="pageTitle">Make education <span>more accessible.</span></h1>
+          <p class="subtitle" id="pageSubtitle">Discover scholarships, understand eligibility and organize your applications.</p>
+        </div>
+        <span class="academic-badge">✦ Student toolkit</span>
+      </div>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="hero-tag">SCHOLARSHIP DISCOVERY</span>
+          <h2>Your goals.<br>More possibilities.</h2>
+          <p>Explore funding opportunities and find the ones worth applying for.</p>
+          <button class="btn btn-light" id="heroExplore">Explore opportunities ↗</button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="hero-circle">₹</div>
+          <div class="floating-card card-top">✦ &nbsp; New opportunities</div>
+          <div class="floating-card card-bottom"><span class="mini-check">✓</span><div><b>Stay organized</b><small>One step at a time</small></div></div>
+          <span class="hero-star star-one">✳</span><span class="hero-star star-two">✦</span>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card"><div class="stat-top">Opportunities listed <span class="stat-icon purple">◇</span></div><div class="stat-value" id="totalStat">0</div><p>Demo catalogue</p></article>
+        <article class="stat-card"><div class="stat-top">Your saved items <span class="stat-icon pink">♡</span></div><div class="stat-value" id="savedStat">0</div><p>Your shortlist</p></article>
+        <article class="stat-card"><div class="stat-top">Checklist progress <span class="stat-icon green">✓</span></div><div class="stat-value" id="progressStat">0%</div><p>Documents completed</p></article>
+      </section>
+
+      <section class="view" id="discoverView">
+        <div class="section-heading"><div><p class="eyebrow">FIND YOUR MATCH</p><h2>Explore scholarships</h2></div><span id="resultCount" class="result-count">0 opportunities</span></div>
+        <div class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search name, course, state or keyword..."><button class="btn btn-primary" id="searchBtn">Search</button></div>
+        <div class="filters">
+          <label>Category<select id="categoryFilter"><option value="all">All categories</option><option value="government">Government</option><option value="merit">Merit-based</option><option value="private">Private</option><option value="education">Education support</option></select></label>
+          <label>Study level<select id="levelFilter"><option value="all">All levels</option><option value="school">School</option><option value="undergraduate">Undergraduate</option><option value="postgraduate">Postgraduate</option></select></label>
+          <label>State<select id="stateFilter"><option value="all">All states</option><option value="Uttar Pradesh">Uttar Pradesh</option><option value="All India">All India</option><option value="Other states">Other states</option></select></label>
+          <button id="resetFilters" class="reset-btn">Reset ↺</button>
+        </div>
+        <div class="notice">ⓘ &nbsp; Demo catalogue. Verify current eligibility, award amounts and dates on official scheme websites.</div>
+        <div class="scholarship-grid" id="scholarshipGrid"></div>
+        <div class="empty-state hidden" id="emptyState"><h3>No matching scholarships</h3><p>Try another search or reset the filters.</p><button class="btn btn-primary" id="emptyReset">Reset filters</button></div>
+      </section>
+
+      <section class="view hidden" id="savedView">
+        <div class="section-heading"><div><p class="eyebrow">YOUR SHORTLIST</p><h2>Saved scholarships</h2><p class="subtitle">Your promising opportunities in one place.</p></div></div>
+        <div class="scholarship-grid" id="savedGrid"></div>
+        <div class="empty-state hidden" id="savedEmpty"><h3>Your shortlist is empty</h3><p>Save scholarships to find them here later.</p><button class="btn btn-primary" id="savedExplore">Discover scholarships</button></div>
+      </section>
+
+      <section class="view hidden" id="eligibilityView">
+        <div class="section-heading"><div><p class="eyebrow">FIND YOUR OPTIONS</p><h2>Eligibility checker</h2><p class="subtitle">Enter your details to check basic criteria in this demo catalogue.</p></div></div>
+        <form id="eligibilityForm" class="panel form-grid">
+          <label>Study level<select id="studentLevel" required><option value="undergraduate">Undergraduate / B.Tech</option><option value="school">School</option><option value="postgraduate">Postgraduate</option></select></label>
+          <label>State<select id="studentState" required><option value="Uttar Pradesh">Uttar Pradesh</option><option value="Other states">Other states</option></select></label>
+          <label>Annual family income (₹)<input id="income" type="number" min="0" max="100000000" placeholder="e.g. 150000" required></label>
+          <label>Class / course<select id="studentCourse"><option value="B.Tech">B.Tech</option><option value="Other UG">Other undergraduate</option><option value="School">School</option><option value="PG">Postgraduate</option></select></label>
+          <label>Category<select id="studentCategory"><option value="General">General</option><option value="OBC">OBC</option><option value="SC">SC</option><option value="ST">ST</option><option value="EWS">EWS</option><option value="Other">Other</option></select></label>
+          <label>Minimum percentage (0–100)<input id="marks" type="number" min="0" max="100" placeholder="e.g. 75" required></label>
+          <div class="form-actions"><button class="btn btn-primary" type="submit">Check opportunities →</button><button class="btn btn-outline" type="reset">Clear</button></div>
+        </form>
+        <div id="eligibilityResults" class="results-panel hidden" aria-live="polite"></div>
+      </section>
+
+      <section class="view hidden" id="documentsView">
+        <div class="section-heading"><div><p class="eyebrow">GET APPLICATION-READY</p><h2>Document checklist</h2><p class="subtitle">Track what you have prepared. Requirements differ by scheme.</p></div></div>
+        <div class="panel checklist-panel">
+          <div class="checklist-top"><div><h3>Your documents</h3><p id="checklistText">0 of 8 completed</p></div><span id="checklistPercent">0%</span></div>
+          <div class="progress-track"><div id="progressBar"></div></div>
+          <div id="documentList" class="document-list"></div>
+          <button id="clearChecklist" class="btn btn-outline">Reset checklist</button>
+        </div>
+        <p class="notice">Security tip: This demo does not upload documents. Never share Aadhaar, bank details or OTPs with an unverified site.</p>
+      </section>
+    </div>
+  </main>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="closeModal" class="modal-close" aria-label="Close">✕</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
